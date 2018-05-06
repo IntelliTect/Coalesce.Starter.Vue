@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    // This tsconfig exists to workaround https://github.com/vuejs/vetur/issues/567
+    // when the entire solution is opened in VS Code.
+    "experimentalDecorators": true
+  }
+}

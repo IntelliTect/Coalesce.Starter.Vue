@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <OutputType>Exe</OutputType>
+    <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="src\main.ts" />
+    <None Remove="src\router.ts" />
+    <None Remove="src\shims.d.ts" />
+    <None Remove="tests\unit\HelloWorld.spec.ts" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Update="Views\**\*;appsettings.json;web.config">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Coalesce.Starter.Vue.Data\Coalesce.Starter.Vue.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="IntelliTect.Coalesce" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="IntelliTect.Coalesce.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\router.ts" />
+    <TypeScriptCompile Include="src\shims.d.ts" />
+    <TypeScriptCompile Include="tests\unit\HelloWorld.spec.ts" />
+  </ItemGroup>  
+</Project>

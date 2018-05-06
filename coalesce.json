@@ -1,0 +1,8 @@
+{
+  "webProject": {
+    "projectFile": "./src/Coalesce.Starter.Vue.Web/Coalesce.Starter.Vue.Web.csproj"
+  },
+  "dataProject": {
+    "projectFile": "./src/Coalesce.Starter.Vue.Data/Coalesce.Starter.Vue.Data.csproj"
+  }
+}
