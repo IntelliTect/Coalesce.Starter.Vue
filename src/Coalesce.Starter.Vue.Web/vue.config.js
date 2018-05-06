@@ -1,5 +1,5 @@
 module.exports = {
   lintOnSave: false,
   outputDir: 'wwwroot',
-  baseUrl: "/dist/"
+  baseUrl: "/"
 }

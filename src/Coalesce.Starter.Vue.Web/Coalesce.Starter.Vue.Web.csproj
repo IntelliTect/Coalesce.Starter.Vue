@@ -7,13 +7,6 @@
     <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="src\main.ts" />
-    <None Remove="src\router.ts" />
-    <None Remove="src\shims.d.ts" />
-    <None Remove="tests\unit\HelloWorld.spec.ts" />
-  </ItemGroup>
   
   <ItemGroup>
     <Content Update="Views\**\*;appsettings.json;web.config">
@@ -27,17 +20,23 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-    <PackageReference Include="IntelliTect.Coalesce" Version="2.0.0" />
+    <PackageReference Include="IntelliTect.Coalesce" Version="$(CoalesceVersion)" />
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="IntelliTect.Coalesce.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="IntelliTect.Coalesce.Tools" Version="$(CoalesceVersion)" />
   </ItemGroup>
 
-  <ItemGroup>
-    <TypeScriptCompile Include="src\main.ts" />
-    <TypeScriptCompile Include="src\router.ts" />
-    <TypeScriptCompile Include="src\shims.d.ts" />
-    <TypeScriptCompile Include="tests\unit\HelloWorld.spec.ts" />
-  </ItemGroup>  
+  <Target Name="PublishRunWebpack" BeforeTargets="ComputeFilesToPublish">
+    <Message Importance="high" Text="Building for production with vue-cli. Configure this in your .csproj." />
+    <Exec Command="npm run-script build" />
+    <ItemGroup>
+      <DistFiles Include="wwwroot\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
 </Project>

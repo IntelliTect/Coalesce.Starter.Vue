@@ -2,8 +2,6 @@
   <div class="hello">
     <h1>
       {{ msg }}
-      <br>
-      <small>This is also a Coalesce application!</small>
     </h1>
     <h2>
       Check out <a href="https://github.com/vuejs/awesome-vue" target="_blank">🎉 awesome-vue</a> for Vue components, libraries, examples, and more!
@@ -78,6 +76,8 @@ ol {
   text-align: left;
   li {
     padding: 5px;
+    max-width: 800px;
+    margin: auto;
   }
 }
 ul {

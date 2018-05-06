@@ -8,6 +8,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
+    "noEmitOnError": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [

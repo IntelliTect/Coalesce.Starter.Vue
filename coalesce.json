@@ -4,5 +4,13 @@
   },
   "dataProject": {
     "projectFile": "./src/Coalesce.Starter.Vue.Data/Coalesce.Starter.Vue.Data.csproj"
+  },
+
+  "rootGenerator": "Vue",
+
+  "generatorConfig": {
+    "Scripts": {
+      "targetDirectory": "../src"
+    }
   }
 }
