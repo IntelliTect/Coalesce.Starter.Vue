@@ -1,4 +1,4 @@
-﻿$defaultNamespace = "Coalesce.Starter";
+﻿$defaultNamespace = "Coalesce.Starter.Vue";
 $defaultDatabase = "CoalesceStarterDb";
 $defaultConnection = "Server=(localdb)\\MSSQLLocalDB;Database=$defaultDatabase;Trusted_Connection=True;MultipleActiveResultSets=True;";
 
